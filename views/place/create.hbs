@@ -1,0 +1,23 @@
+<h1>Create a New Place</h1>
+
+<form action="" method="POST">
+  <label for="create-name">Outlet Name</label>
+  <input required id="create-name" type="text" name="name" placeholder="Outlet Name">
+
+  <!--label for="select-type">Outlet Type</label>
+    <select id = "select-type">
+      <option value = "coffee_shop">Coffee shop</option>
+      <option value = "bookstore">Bookstore</option>
+    </select-->
+
+  <p>Please select the type of outlet:</p>
+  <div>
+    <label for="coffee-shop">Coffee shop</label>
+    <input required id="coffee-shop" type="radio" name="type" value="coffee_shop">
+
+    <label for="bookstore">Bookstore</label>
+    <input required id="bookstore" type="radio" name="type" value="bookstore">
+  </div>
+
+  <button>Submit New Outlet</button>
+</form>
