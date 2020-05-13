@@ -1,9 +1,10 @@
-<h1>Our listings: </h1>
+<h1>Our Book and Beans listings: </h1>
 
 {{#each places}}
   <ul>
     <li>
-    {{name}}
+    <a href="/place/{{_id}}">{{name}}</a>
+    
     </li>
     <li>
     {{type}}

@@ -6,5 +6,39 @@
   <li>
   {{place.type}}
   </li>
+  <span>Latitude: {{place.location.coordinates.[1]}}</span>
+  <span>Longitude: {{place.location.coordinates.[0]}}</span>
 </ul>
+  <div id="view-map"></div>
 
+  <a href="/place/{{place._id}}/edit"><button>Edit this Outlet</button></a>
+  <a href="/place/{{place._id}}/delete"><button>Delete this Outlet</button></a>
+
+<script>
+    const place = {{{json place}}};
+    console.log(place.location.coordinates);
+
+    function initMap() {
+      const $viewMap = document.getElementById('view-map');
+      const map = new window.google.maps.Map($viewMap, {
+        center: {lat: 38.73, lng: -9.19},
+        zoom: 10
+      });
+      //console.log(map);
+
+      const marker = new window.google.maps.Marker({
+        map,
+        postion: {
+          lat: 38.73, //place.location.coordinates[1],
+          lng: -9.19 //place.location.coordinates[0]
+        },
+        title: place.name
+      });
+
+      
+
+    }
+</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdposKCgbg8RFWcOBc8LOA12eYkWrXOE8&callback=initMap"></script>

@@ -1,9 +1,9 @@
-<h1>Submit a new Book and Beans Outlet</h1>
+<h1>Edit Book and Beans Outlet {{place.name}}</h1>
 
 <form action="" method="POST">
   
-  <label for="create-name">Outlet Name</label>
-  <input required id="create-name" type="text" name="name" placeholder="Outlet Name">
+  <label for="edit-name">Edit Outlet Name from <bold>{{place.name}}</bold></label>
+  <input required id="edit-name" type="text" name="name" placeholder="Updated Outlet Name">
 
   <!--label for="select-type">Outlet Type</label>
     <select id = "select-type">
@@ -11,7 +11,7 @@
       <option value = "bookstore">Bookstore</option>
     </select-->
 
-  <p>Please select the type of outlet:</p>
+  <p>Please update the type of outlet from <bold>{{place.type}}</bold> :</p>
   <div>
     <label for="coffee-shop">Coffee shop</label>
     <input required id="coffee-shop" type="radio" name="type" value="coffee_shop">
@@ -20,17 +20,16 @@
     <input required id="bookstore" type="radio" name="type" value="bookstore">
   </div>
 
-  <label for="select-latitude">Latitude</label>
-  <input required id="select-latitude" type="text" name="latitude" placeholder="Latitude">
+  <label for="update-latitude">New Latitude</label>
+  <input required id="update-latitude" type="text" name="latitude" placeholder="Updated Latitude">
 
-  <label for="select-longitude">Longitude</label>
-  <input required id="select-longitude" type="text" name="longitude" placeholder="Longitude">
+  <label for="update-longitude">New Longitude</label>
+  <input required id="update-longitude" type="text" name="longitude" placeholder="Updated Longitude">
 
   <div id="view-map"></div>
 
-  <button>Submit New Outlet</button>
+  <button>Edit  Outlet</button>
 </form>
-
 
 <script>
     //const place = {{{json place}}};
@@ -45,8 +44,8 @@
       });
       //console.log(map);
   
-      const $selectLatitude = document.getElementById('select-latitude');
-      const $selectLongitude = document.getElementById('select-longitude');
+      const $selectLatitude = document.getElementById('update-latitude');
+      const $selectLongitude = document.getElementById('update-longitude');
 
       console.log($selectLatitude , $selectLongitude)
 

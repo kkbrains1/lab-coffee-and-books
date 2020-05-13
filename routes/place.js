@@ -12,10 +12,15 @@ placeRouter.get('/create', (req, res, next) => {
 placeRouter.post('/create', (req, res, next) => {
   const name = req.body.name;
   const type = req.body.type;
+  const latitude = req.body.latitude;
+  const longitude = req.body.longitude;
   //console.log(name, type);
   Place.create({
     name,
-    type
+    type,
+    location: {
+      coordinates: [longitude, latitude]
+    }
   })
     .then(place => {
       //console.log('created in DB:', place, place._id);
@@ -48,7 +53,14 @@ placeRouter.get('/:placeId', (req, res, next) => {
     });
 });
 
+placeRouter.get('/:placeId/edit', (req, res, next) => {
+  const placeId = req.params.placeId;
+  //console.log(placeId);
+  res.render('place/edit');
+});
 
-
+placeRouter.get('/:placeId/delete', (req, res, next) => {
+  res.render('place/delete');
+});
 
 module.exports = placeRouter;
